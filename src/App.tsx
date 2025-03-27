@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
+
     const params = new URLSearchParams(window.location.search);
     const langParam = params.get("lang") as Language;
     const championsParam = params.get("champions");
@@ -31,9 +32,16 @@ function App() {
 
     if (championsParam && amtParam) {
       const decodedChampions = atob(championsParam).split(",");
+      const blue = decodedChampions
+        .filter((champion) => champion.startsWith("blue:"))
+        .map((champion) => champion.replace("blue:", ""));
+      const red = decodedChampions
+        .filter((champion) => champion.startsWith("red:"))
+        .map((champion) => champion.replace("red:", ""));
+
       setAmount(parseInt(amtParam, 10));
-      setBlueTeam(decodedChampions.filter((_, i) => i % 2 === 0));
-      setRedTeam(decodedChampions.filter((_, i) => i % 2 === 1));
+      setBlueTeam(blue);
+      setRedTeam(red);
       setShowShareLink(true);
     }
   }, []);
@@ -48,8 +56,12 @@ function App() {
     setBlueTeam(blue);
     setRedTeam(red);
 
-    const allChampions = [...blue, ...red];
-    const championsBase64 = btoa(allChampions.join(","));
+    const championsWithSides = [
+      ...blue.map((champion) => `blue:${champion}`),
+      ...red.map((champion) => `red:${champion}`),
+    ];
+
+    const championsBase64 = btoa(championsWithSides.join(","));
     const newUrl = `${window.location.pathname}?champions=${encodeURIComponent(
       championsBase64
     )}&lang=${language}&amt=${amount}`;
