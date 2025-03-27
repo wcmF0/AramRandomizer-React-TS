@@ -4,6 +4,7 @@ import { TeamDisplay } from "./components/TeamDisplay";
 import { ShareLink } from "./components/ShareLink";
 import { translations } from "./constants/translations";
 import { Language } from "./types/champion";
+import Banner from "../public/Banner.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -80,7 +81,7 @@ function App() {
         <img
           data-aos="fade-in"
           className="w-full max-w-screen-xl mx-auto object-cover"
-          src="./public/Banner.png"
+          src={Banner}
           alt="Banner"
         />
       </header>
