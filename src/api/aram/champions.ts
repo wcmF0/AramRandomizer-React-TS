@@ -25,7 +25,6 @@ export const champions: ChampionData[] = [
     id: "Ahri",
     apiname: "Ahri",
     aram: {
-      dmg_dealt: 0.97,
       healing: 0.9,
     },
   },
@@ -103,11 +102,7 @@ export const champions: ChampionData[] = [
   {
     id: "AurelionSol",
     apiname: "Aurelion Sol",
-    aram: {
-      dmg_dealt: 1.02,
-      dmg_taken: 0.92,
-      ability_haste: -20,
-    },
+    aram: {},
   },
   {
     id: "Aurora",
@@ -143,9 +138,7 @@ export const champions: ChampionData[] = [
   {
     id: "Blitzcrank",
     apiname: "Blitzcrank",
-    aram: {
-      dmg_dealt: 1.05,
-    },
+    aram: {},
   },
   {
     id: "Brand",
@@ -159,10 +152,7 @@ export const champions: ChampionData[] = [
   {
     id: "Braum",
     apiname: "Braum",
-    aram: {
-      dmg_dealt: 1.1,
-      dmg_taken: 0.9,
-    },
+    aram: {},
   },
   {
     id: "Briar",
@@ -342,7 +332,7 @@ export const champions: ChampionData[] = [
     id: "Gwen",
     apiname: "Gwen",
     aram: {
-      dmg_dealt: 1.05,
+      dmg_dealt: 1.02,
     },
   },
   {
@@ -663,7 +653,7 @@ export const champions: ChampionData[] = [
     id: "MissFortune",
     apiname: "Miss Fortune",
     aram: {
-      dmg_dealt: 0.9,
+      dmg_dealt: 0.93,
       dmg_taken: 1.05,
     },
   },
@@ -821,6 +811,7 @@ export const champions: ChampionData[] = [
     apiname: "Rakan",
     aram: {
       dmg_taken: 0.95,
+      ability_haste: 10,
     },
   },
   {
@@ -841,7 +832,6 @@ export const champions: ChampionData[] = [
     apiname: "Rell",
     aram: {
       dmg_dealt: 0.95,
-      healing: 0.9,
       shielding: 0.9,
     },
   },
@@ -977,9 +967,7 @@ export const champions: ChampionData[] = [
   {
     id: "Skarner",
     apiname: "Skarner",
-    aram: {
-      dmg_taken: 1.05,
-    },
+    aram: {},
   },
   {
     id: "Smolder",
@@ -999,7 +987,7 @@ export const champions: ChampionData[] = [
     id: "Soraka",
     apiname: "Soraka",
     aram: {
-      dmg_taken: 0.97,
+      healing: 1.05,
       ability_haste: 10,
     },
   },
@@ -1258,9 +1246,7 @@ export const champions: ChampionData[] = [
   {
     id: "Yuumi",
     apiname: "Yuumi",
-    aram: {
-      dmg_dealt: 1.05,
-    },
+    aram: {},
   },
   {
     id: "Zac",
